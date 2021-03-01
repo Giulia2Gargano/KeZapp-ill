@@ -7,9 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"it.sirfin.rubricadoc"})
-@EnableJpaRepositories(basePackages = {"it.sirfin.rubricadoc.repository"})
-@EntityScan(basePackages = {"it.sirfin.rubricadoc.model"})
+@ComponentScan(basePackages = {"it.sirfin.KeZappillserver"})
+@EnableJpaRepositories(basePackages = {"it.sirfin.KeZappillserver.repository"})
+@EntityScan(basePackages = {"it.sirfin.KeZappillserver.model"})
 public class KeZappIllServerApplication {
 
     public static void main(String[] args) {
