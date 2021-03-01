@@ -7,11 +7,9 @@ package it.sirfin.KeZappillserver.repository;
 
 import it.sirfin.KeZappillserver.model.Messaggio;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-/**
- *
- * @author Palo
- */
+@Repository
 public interface KeZappRepositoryMessaggio extends JpaRepository<Messaggio, Long> {
 
 }

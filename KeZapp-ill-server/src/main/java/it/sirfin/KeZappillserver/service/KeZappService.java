@@ -16,7 +16,7 @@ import it.sirfin.KeZappillserver.dto.RichiediRegistrazioneDto;
  */
 public interface KeZappService {
 
-    RichiediRegistrazioneDto registrazione(RichiediRegistrazioneDto reqregDto);
+    RegistrazioneDto registrazione(RichiediRegistrazioneDto reqregDto);
 
     InviaMessaggioDto invaATutti(InviaMessaggioDto iat);
 
