@@ -9,6 +9,6 @@ package it.sirfin.KeZappillserver.repository;
  *
  * @author Palo
  */
-public interface KezzappRepository {
+public interface KeZappRepository {
     
 }
