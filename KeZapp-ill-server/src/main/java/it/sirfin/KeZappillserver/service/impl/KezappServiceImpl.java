@@ -10,11 +10,9 @@ import it.sirfin.KeZappillserver.dto.RegistrazioneDto;
 import it.sirfin.KeZappillserver.dto.RichiediMessaggioDto;
 import it.sirfin.KeZappillserver.dto.RichiediRegistrazioneDto;
 import it.sirfin.KeZappillserver.service.KeZappService;
+import org.springframework.stereotype.Service;
 
-/**
- *
- * @author Palo
- */
+@Service
 public class KeZappServiceImpl implements KeZappService {
 
     @Override
