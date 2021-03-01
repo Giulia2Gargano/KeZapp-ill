@@ -9,6 +9,7 @@ import it.sirfin.KeZappillserver.dto.InviaMessaggioDto;
 import it.sirfin.KeZappillserver.dto.RegistrazioneDto;
 import it.sirfin.KeZappillserver.dto.RichiediMessaggioDto;
 import it.sirfin.KeZappillserver.dto.RichiediRegistrazioneDto;
+import it.sirfin.KeZappillserver.model.Chat;
 import it.sirfin.KeZappillserver.repository.KeZappRepositoryChat;
 import it.sirfin.KeZappillserver.service.KeZappService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class KeZappServiceImpl implements KeZappService {
 
     @Override
     public RegistrazioneDto registrazione(RichiediRegistrazioneDto reqregDto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        keZappRepositoryChat.save(reqregDto.getNickname());
     }
 
     @Override
