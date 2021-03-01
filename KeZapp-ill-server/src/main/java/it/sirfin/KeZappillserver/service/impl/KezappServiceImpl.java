@@ -4,16 +4,17 @@
  * and open the template in the editor.
  */
 package it.sirfin.KeZappillserver.service.impl;
-
 import it.sirfin.KeZappillserver.dto.InviaMessaggioDto;
 import it.sirfin.KeZappillserver.dto.RegistrazioneDto;
 import it.sirfin.KeZappillserver.dto.RichiediMessaggioDto;
 import it.sirfin.KeZappillserver.dto.RichiediRegistrazioneDto;
 import it.sirfin.KeZappillserver.service.KeZappService;
-import org.springframework.stereotype.Service;
 
-@Service
-public class KeZappServiceImpl implements KeZappService {
+/**
+ *
+ * @author Admin
+ */
+public class KeZappServiceImpl implements KeZappService{
 
     @Override
     public RichiediRegistrazioneDto registrazione(RichiediRegistrazioneDto reqregDto) {
@@ -34,5 +35,6 @@ public class KeZappServiceImpl implements KeZappService {
     public RegistrazioneDto aggiorna(RichiediMessaggioDto reqM) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
+    
 }
