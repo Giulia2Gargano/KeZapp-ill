@@ -1,8 +1,14 @@
-<input type="text" [(ngModel)]="nickName">
-<button (click)="registrazione()">Registrazione</button>
+<div>
+  <input type="text" [(ngModel)]="nickName">
+  <button (click)="registrazione()">Registrazione</button>
+</div>
 <br>
-<input type="text" [(ngModel)]="messaggio">
-<button (click)="invia()">Invia a tutti</button>
+<div>
+
+  <input type="text" [(ngModel)]="messaggio">
+  <button (click)="invia()">Invia a tutti</button>
+</div>
+
 <br>
 <text>Contatti</text>
 <table>
@@ -16,7 +22,7 @@
     <td></td>
     <td></td>
     <td></td>
-    <td><button>Invia</button></td>
+    <td><button (click)="invia()">Invia</button></td>
   </tr>
 </table>
 <br>
