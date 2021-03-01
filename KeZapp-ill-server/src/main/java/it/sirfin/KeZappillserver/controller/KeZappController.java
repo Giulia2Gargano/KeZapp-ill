@@ -5,11 +5,16 @@
  */
 package it.sirfin.KeZappillserver.controller;
 
+import it.sirfin.KeZappillserver.service.KeZappService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin("*")
 @RestController
 public class KeZappController {
+
+    @Autowired
+    KeZappService keZappService;
 
 }
