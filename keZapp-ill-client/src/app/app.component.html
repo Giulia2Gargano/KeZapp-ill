@@ -6,23 +6,23 @@
 <div>
 
   <input type="text" [(ngModel)]="messaggio">
-  <button (click)="invia()">Invia a tutti</button>
+  <button (click)="inviaATutti()">Invia a tutti</button>
 </div>
 
 <br>
 <text>Contatti</text>
 <table>
   <tr>
-    <th>Column0</th>
-    <th>Column1</th>
-    <th>Column2</th>
-    <th>Column3</th>
+    <th>Id</th>
+    <th>Nickname</th>
+    <th>Sessione</th>
+    <th>Invia</th>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td></td>
-    <td><button (click)="invia()">Invia</button></td>
+    <td><button (click)="inviaAUno()">Invia A Uno</button></td>
   </tr>
 </table>
 <br>
@@ -32,10 +32,10 @@
 <br>
 <table>
   <tr>
-    <th>Column0</th>
-    <th>Column1</th>
-    <th>Column2</th>
-    <th>Column3</th>
+    <th>Id</th>
+    <th>Testo</th>
+    <th>Destinatario</th>
+    <th>Mittente</th>
   </tr>
   <tr>
     <td></td>
