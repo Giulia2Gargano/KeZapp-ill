@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Chat } from './chat';
 import { InviaMessaggioDto } from './invia-messaggio-dto';
+import { Messaggio } from './messaggio';
 import { RegistrazioneDto } from './registrazione-dto';
 import { RichiediRegistrazioneDto } from './richiedi-registrazione-dto';
 
@@ -13,7 +14,11 @@ import { RichiediRegistrazioneDto } from './richiedi-registrazione-dto';
 export class AppComponent {
   contatto = new Chat();
   contatti: Chat[] = [];
-  messaggio = "";
+
+  messaggio = new Messaggio();
+  messaggi: Messaggio[] = [];
+
+  messaggioDaInviare = "";
   constructor(private http: HttpClient) { }
 
   registrazione() {

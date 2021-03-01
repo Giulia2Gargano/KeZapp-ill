@@ -5,13 +5,13 @@
 <br>
 <div>
 
-  <input type="text" [(ngModel)]="messaggio">
+  <input type="text" [(ngModel)]="messaggioDaInviare">
   <button (click)="inviaATutti()">Invia a tutti</button>
 </div>
 
 <br>
 <text>Contatti</text>
-<table>
+<table *ngFor="let c of contatti">
   <tr>
     <th>Id</th>
     <th>Nickname</th>
@@ -19,9 +19,9 @@
     <th>Invia</th>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>{{c.id}}</td>
+    <td>{{c.nickname}}</td>
+    <td>{{c.sessione}}</td>
     <td><button (click)="inviaAUno()">Invia A Uno</button></td>
   </tr>
 </table>
@@ -30,7 +30,7 @@
 <text>Messaggi Ricevuti</text>
 <button (click)="aggiorna()">Aggiorna</button>
 <br>
-<table>
+<table *ngFor="let a of messaggi">
   <tr>
     <th>Id</th>
     <th>Testo</th>
@@ -38,9 +38,14 @@
     <th>Mittente</th>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>{{a.id}}</td>
+    <td>{{a.testo}}</td>
+    <td>{{a.aliasDestinatario}}</td>
+    <td>{{a.aliasMittente}}</td>
   </tr>
 </table>
+
+<!-- id = null;
+    testo = "";
+    aliasDestinatario = "";
+    aliasMittente = ""; -->
