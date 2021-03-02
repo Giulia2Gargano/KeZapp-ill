@@ -22,14 +22,14 @@ public class Chat implements Serializable {
     private String nickname;
 
     @Column
-    private String Sessione;
+    private String sessione;
 
     public Chat() {
     }
 
-    public Chat(String nickname, String Sessione) {
+    public Chat(String nickname, String sessione) {
         this.nickname = nickname;
-        this.Sessione = Sessione;
+        this.sessione = sessione;
     }
 
     public Long getId() {
@@ -49,16 +49,16 @@ public class Chat implements Serializable {
     }
 
     public String getSessione() {
-        return Sessione;
+        return sessione;
     }
 
     public void setSessione(String Sessione) {
-        this.Sessione = Sessione;
+        this.sessione = Sessione;
     }
 
     @Override
     public String toString() {
-        return "Chat{" + "id=" + id + ", nickname=" + nickname + ", Sessione=" + Sessione + '}';
+        return "Chat{" + "id=" + id + ", nickname=" + nickname + ", sessione=" + sessione + '}';
     }
 
 }
