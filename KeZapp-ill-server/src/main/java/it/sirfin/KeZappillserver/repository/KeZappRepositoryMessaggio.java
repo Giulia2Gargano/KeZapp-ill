@@ -14,5 +14,5 @@ import org.springframework.stereotype.Repository;
 public interface KeZappRepositoryMessaggio extends JpaRepository<Messaggio, Long> {
 
     
-    List<Messaggio> findByDestinatarioLike(String aliasDestinatario);
+    //List<Messaggio> findByDestinatarioLike(String aliasDestinatario);
 }

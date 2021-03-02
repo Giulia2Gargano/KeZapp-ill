@@ -34,12 +34,12 @@ export class AppComponent {
   inviaATutti() {
     let req = new InviaMessaggioDto();
     let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/invia-tutti", req);
-    oss.subscribe();
+    oss.subscribe(r => this.messaggi = r.messaggi);
   }
 
-  inviaAUno() {
+  inviaAUno(c: Messaggio) {
     let req = new InviaMessaggioDto();
-    //req.destinatario = this.contatto.nickname;
+    req.destinatario = c.aliasDestinatario;
     let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/invia-uno", req);
     oss.subscribe();
   }

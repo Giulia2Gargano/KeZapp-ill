@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface KeZappRepositoryChat extends JpaRepository<Chat, Long> {
 
-    List<Chat> findByNickNameOrSessioneLike(Long id);
+    //List<Chat> findByNickNameOrSessioneLike(Long id);
     
 }
