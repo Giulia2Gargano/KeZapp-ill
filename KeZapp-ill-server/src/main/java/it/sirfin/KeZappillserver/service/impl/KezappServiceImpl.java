@@ -12,9 +12,11 @@ import it.sirfin.KeZappillserver.dto.RichiediRegistrazioneDto;
 import it.sirfin.KeZappillserver.repository.KeZappRepositoryChat;
 import it.sirfin.KeZappillserver.service.KeZappService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-@Service
+/**
+ *
+ * @author Palo
+ */
 public class KeZappServiceImpl implements KeZappService {
 
     @Autowired
