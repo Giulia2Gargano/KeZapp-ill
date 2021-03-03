@@ -10,6 +10,7 @@ import it.sirfin.KeZappillserver.dto.RegistrazioneDto;
 import it.sirfin.KeZappillserver.dto.RichiediMessaggioDto;
 import it.sirfin.KeZappillserver.dto.RichiediRegistrazioneDto;
 import it.sirfin.KeZappillserver.model.Chat;
+import it.sirfin.KeZappillserver.model.Messaggio;
 import it.sirfin.KeZappillserver.repository.KeZappRepositoryChat;
 import it.sirfin.KeZappillserver.repository.KeZappRepositoryMessaggio;
 import it.sirfin.KeZappillserver.service.KeZappService;
@@ -39,6 +40,10 @@ public class KeZappServiceImpl implements KeZappService {
 
     @Override
     public InviaMessaggioDto invaATutti(InviaMessaggioDto iat) {
+        KeZappRepositoryMessaggio.findBySessione(iat.getSessione());
+        Messaggio m = new Messaggio(iat.getMessaggio(), iat.getDestinatario(), iat.getSessione());
+        KeZappRepositoryMessaggio.save(m);
+        KeZappRepositoryMessaggio.findAll();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
