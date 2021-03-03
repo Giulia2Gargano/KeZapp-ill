@@ -24,21 +24,21 @@ public class KeZappController {
 
     @RequestMapping("/registrazione")
     public RegistrazioneDto registrazione(RichiediRegistrazioneDto reqDto) {
-        return registrazione(reqDto);
+        return keZappService.registrazione(reqDto);
     }
 
     @RequestMapping("/invia-tutti")
     public RegistrazioneDto inviaATutti(InviaMessaggioDto reqDto) {
-        return inviaATutti(reqDto);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @RequestMapping("/invia-uno")
     public RegistrazioneDto inviaAUno(InviaMessaggioDto reqDto) {
-        return inviaAUno(reqDto);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @RequestMapping("/aggiorna")
     public RegistrazioneDto aggiorna(RichiediMessaggioDto reqDto) {
-        return aggiorna(reqDto);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

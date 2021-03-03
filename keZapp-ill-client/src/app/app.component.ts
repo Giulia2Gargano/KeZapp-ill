@@ -18,6 +18,8 @@ export class AppComponent {
   messaggio = new Messaggio();
   messaggi: Messaggio[] = [];
 
+  sessione = "";
+
   messaggioDaInviare = "";
   constructor(private http: HttpClient) { }
 
