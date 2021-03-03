@@ -9,6 +9,7 @@ import it.sirfin.KeZappillserver.dto.InviaMessaggioDto;
 import it.sirfin.KeZappillserver.dto.RegistrazioneDto;
 import it.sirfin.KeZappillserver.dto.RichiediMessaggioDto;
 import it.sirfin.KeZappillserver.dto.RichiediRegistrazioneDto;
+import it.sirfin.KeZappillserver.model.Chat;
 import it.sirfin.KeZappillserver.repository.KeZappRepositoryChat;
 import it.sirfin.KeZappillserver.repository.KeZappRepositoryMessaggio;
 import it.sirfin.KeZappillserver.service.KeZappService;
@@ -22,15 +23,17 @@ public class KeZappServiceImpl implements KeZappService {
     KeZappRepositoryChat keZappRepositoryChat;
     @Autowired
     KeZappRepositoryMessaggio KeZappRepositoryMessaggio;
-    
+
     @Override
     public RegistrazioneDto registrazione(RichiediRegistrazioneDto reqregDto) {
-     //creare nuovA CHat con i dati ricevuti 
-     //salvare sul db recuperando laversione con l'id che il db ha aggiunto
-     //convertire l'id in stringa metterlo nella sessione della chat e aggiornarla sul db
-     //ritornare un registrazione dto
-      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-     
+        Chat ch = new Chat(reqregDto.getNickname(), "");
+        keZappRepositoryChat.save(ch);
+        ch.setSessione(Long.toString(ch.getId()));
+        return new RegistrazioneDto();
+        //creare nuovA CHat con i dati ricevuti 
+        //salvare sul db recuperando laversione con l'id che il db ha aggiunto
+        //convertire l'id in stringa metterlo nella sessione della chat e aggiornarla sul db
+        //ritornare un registrazione dto
     }
 
     @Override
