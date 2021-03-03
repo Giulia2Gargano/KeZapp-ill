@@ -9,6 +9,7 @@ import it.sirfin.KeZappillserver.dto.InviaMessaggioDto;
 import it.sirfin.KeZappillserver.dto.RegistrazioneDto;
 import it.sirfin.KeZappillserver.dto.RichiediMessaggioDto;
 import it.sirfin.KeZappillserver.dto.RichiediRegistrazioneDto;
+import it.sirfin.KeZappillserver.model.Messaggio;
 import it.sirfin.KeZappillserver.service.KeZappService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -32,17 +33,20 @@ public class KeZappController {
     }
 
     @RequestMapping("/invia-tutti")
-    public RegistrazioneDto inviaATutti(InviaMessaggioDto reqDto) {
+    @ResponseBody
+    public RegistrazioneDto inviaATutti(@RequestBody InviaMessaggioDto reqDto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @RequestMapping("/invia-uno")
-    public RegistrazioneDto inviaAUno(InviaMessaggioDto reqDto) {
+    @ResponseBody
+    public RegistrazioneDto inviaAUno(@RequestBody InviaMessaggioDto reqDto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @RequestMapping("/aggiorna")
-    public RegistrazioneDto aggiorna(RichiediMessaggioDto reqDto) {
+    @ResponseBody
+    public RegistrazioneDto aggiorna(@RequestBody RichiediMessaggioDto reqDto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

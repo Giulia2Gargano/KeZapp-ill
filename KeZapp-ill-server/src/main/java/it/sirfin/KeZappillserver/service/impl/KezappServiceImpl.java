@@ -14,6 +14,7 @@ import it.sirfin.KeZappillserver.model.Messaggio;
 import it.sirfin.KeZappillserver.repository.KeZappRepositoryChat;
 import it.sirfin.KeZappillserver.repository.KeZappRepositoryMessaggio;
 import it.sirfin.KeZappillserver.service.KeZappService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,19 +28,19 @@ public class KeZappServiceImpl implements KeZappService {
 
     @Override
     public RegistrazioneDto registrazione(RichiediRegistrazioneDto reqregDto) {
+        //creare nuovA CHat con i dati ricevuti 
         Chat ch = new Chat(reqregDto.getNickname());
+        //salvare sul db recuperando laversione con l'id che il db ha aggiunto
         keZappRepositoryChat.save(ch);
+        //convertire l'id in stringa metterlo nella sessione della chat e aggiornarla sul db
         ch.setSessione(Long.toString(ch.getId()));
         keZappRepositoryChat.save(ch);
-        return new RegistrazioneDto();
-        //creare nuovA CHat con i dati ricevuti 
-        //salvare sul db recuperando laversione con l'id che il db ha aggiunto
-        //convertire l'id in stringa metterlo nella sessione della chat e aggiornarla sul db
         //ritornare un registrazione dto
+        return new RegistrazioneDto(ritornaContatti(ch), ritornaMessaggi(ch), ch.getSessione());
     }
 
     @Override
-    public InviaMessaggioDto invaATutti(InviaMessaggioDto iat) {
+    public RegistrazioneDto invaATutti(InviaMessaggioDto iat) {
 //        KeZappRepositoryMessaggio.findBySessione(iat.getSessione());
 //        Messaggio m = new Messaggio(iat.getMessaggio(), iat.getDestinatario(), iat.getSessione());
 //        KeZappRepositoryMessaggio.save(m);
@@ -48,13 +49,23 @@ public class KeZappServiceImpl implements KeZappService {
     }
 
     @Override
-    public InviaMessaggioDto invaAUno(InviaMessaggioDto ia1) {
+    public RegistrazioneDto invaAUno(InviaMessaggioDto ia1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public RegistrazioneDto aggiorna(RichiediMessaggioDto reqM) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Chat> ritornaContatti(Chat c) {
+        return keZappRepositoryChat.findBySessione(c.getSessione());
+    }
+
+    @Override
+    public List<Messaggio> ritornaMessaggi(Chat c) {
+        return KeZappRepositoryMessaggio.findByAliasMittente(c.getSessione());
     }
 
 }

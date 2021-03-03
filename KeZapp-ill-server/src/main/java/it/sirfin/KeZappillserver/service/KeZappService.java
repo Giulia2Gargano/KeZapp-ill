@@ -9,6 +9,9 @@ import it.sirfin.KeZappillserver.dto.InviaMessaggioDto;
 import it.sirfin.KeZappillserver.dto.RegistrazioneDto;
 import it.sirfin.KeZappillserver.dto.RichiediMessaggioDto;
 import it.sirfin.KeZappillserver.dto.RichiediRegistrazioneDto;
+import it.sirfin.KeZappillserver.model.Chat;
+import it.sirfin.KeZappillserver.model.Messaggio;
+import java.util.List;
 
 /**
  *
@@ -18,9 +21,14 @@ public interface KeZappService {
 
     RegistrazioneDto registrazione(RichiediRegistrazioneDto reqregDto);
 
-    InviaMessaggioDto invaATutti(InviaMessaggioDto iat);
+    RegistrazioneDto invaATutti(InviaMessaggioDto iat);
 
-    InviaMessaggioDto invaAUno(InviaMessaggioDto ia1);
+    RegistrazioneDto invaAUno(InviaMessaggioDto ia1);
 
     RegistrazioneDto aggiorna(RichiediMessaggioDto reqM);
+
+    List<Chat> ritornaContatti(Chat c);
+
+    List<Messaggio> ritornaMessaggi(Chat c);
+
 }
