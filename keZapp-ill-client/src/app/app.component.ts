@@ -23,7 +23,6 @@ export class AppComponent {
   showForm = false;
   sessione = "";
 
-  messaggioDaInviare = "";
   constructor(private http: HttpClient) { }
 
   registrazione() {
@@ -42,7 +41,7 @@ export class AppComponent {
   inviaATutti() {
     let req = new InviaMessaggioDto();
     req.sessione = this.sessione;
-    let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/invia-tutti", this.messaggioDaInviare);
+    let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/invia-tutti", req);
     oss.subscribe(r => {
       this.messaggi = r.messaggi
       this.contatti = r.contatti;
