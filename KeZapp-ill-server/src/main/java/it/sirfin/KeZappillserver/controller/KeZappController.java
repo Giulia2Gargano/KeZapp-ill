@@ -35,18 +35,21 @@ public class KeZappController {
     @RequestMapping("/invia-tutti")
     @ResponseBody
     public RegistrazioneDto inviaATutti(@RequestBody InviaMessaggioDto reqDto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Servizio Chiamato");
+        return keZappService.invaATutti(reqDto);
     }
 
     @RequestMapping("/invia-uno")
     @ResponseBody
     public RegistrazioneDto inviaAUno(@RequestBody InviaMessaggioDto reqDto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Servizio Chiamato");
+        return keZappService.invaAUno(reqDto);
     }
 
     @RequestMapping("/aggiorna")
     @ResponseBody
     public RegistrazioneDto aggiorna(@RequestBody RichiediMessaggioDto reqDto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Servizio Chiamato");
+        return keZappService.aggiorna(reqDto);
     }
 }

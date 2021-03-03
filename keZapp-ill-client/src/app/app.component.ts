@@ -18,6 +18,7 @@ export class AppComponent {
   messaggio = new Messaggio();
   messaggi: Messaggio[] = [];
 
+
   sessione = "";
 
   messaggioDaInviare = "";
@@ -33,11 +34,11 @@ export class AppComponent {
       this.sessione = r.sessione;
     });
     this.contatto = new Chat();
-
   }
 
   inviaATutti() {
     let req = new InviaMessaggioDto();
+    req.messaggio = this.messaggioDaInviare;
     let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/invia-tutti", req);
     oss.subscribe(r => this.messaggi = r.messaggi);
   }
@@ -50,8 +51,13 @@ export class AppComponent {
   }
 
   aggiorna() {
-    let oss = this.http.get<RegistrazioneDto>("http://localhost:8080/aggiorna");
-    oss.subscribe(r => this.contatti = r.contatti);
+    let req = new RichiediRegistrazioneDto;
+    let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/aggiorna", req);
+    oss.subscribe(r => {
+      this.contatti = r.contatti;
+      this.sessione = r.sessione;
+      this.messaggi = r.messaggi;
+    });
   }
 
 
