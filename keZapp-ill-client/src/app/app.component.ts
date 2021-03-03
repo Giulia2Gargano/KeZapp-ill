@@ -4,6 +4,7 @@ import { Chat } from './chat';
 import { InviaMessaggioDto } from './invia-messaggio-dto';
 import { Messaggio } from './messaggio';
 import { RegistrazioneDto } from './registrazione-dto';
+import { RichiediMessaggiDto } from './richiedi-messaggi-dto';
 import { RichiediRegistrazioneDto } from './richiedi-registrazione-dto';
 
 @Component({
@@ -38,9 +39,12 @@ export class AppComponent {
 
   inviaATutti() {
     let req = new InviaMessaggioDto();
-    req.messaggio = this.messaggioDaInviare;
-    let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/invia-tutti", req);
-    oss.subscribe(r => this.messaggi = r.messaggi);
+    req.sessione = this.sessione;
+    let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/invia-tutti", this.messaggioDaInviare);
+    oss.subscribe(r => {
+      this.messaggi = r.messaggi
+      this.contatti = r.contatti;
+    });
   }
 
   inviaAUno(c: Messaggio) {
@@ -51,11 +55,11 @@ export class AppComponent {
   }
 
   aggiorna() {
-    let req = new RichiediRegistrazioneDto;
+    let req = new RichiediMessaggiDto();
+    req.sessione = this.sessione;
     let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/aggiorna", req);
     oss.subscribe(r => {
       this.contatti = r.contatti;
-      this.sessione = r.sessione;
       this.messaggi = r.messaggi;
     });
   }
