@@ -60,7 +60,7 @@ public class KeZappServiceImpl implements KeZappService {
 
     @Override
     public List<Chat> ritornaContatti(Chat c) {
-        return keZappRepositoryChat.findBySessione(c.getSessione());
+        return keZappRepositoryChat.findBySessioneIsNot(c.getSessione());
     }
 
     @Override
