@@ -40,10 +40,10 @@ public class KeZappServiceImpl implements KeZappService {
 
     @Override
     public InviaMessaggioDto invaATutti(InviaMessaggioDto iat) {
-        KeZappRepositoryMessaggio.findBySessione(iat.getSessione());
-        Messaggio m = new Messaggio(iat.getMessaggio(), iat.getDestinatario(), iat.getSessione());
-        KeZappRepositoryMessaggio.save(m);
-        KeZappRepositoryMessaggio.findAll();
+//        KeZappRepositoryMessaggio.findBySessione(iat.getSessione());
+//        Messaggio m = new Messaggio(iat.getMessaggio(), iat.getDestinatario(), iat.getSessione());
+//        KeZappRepositoryMessaggio.save(m);
+//        KeZappRepositoryMessaggio.findAll();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
