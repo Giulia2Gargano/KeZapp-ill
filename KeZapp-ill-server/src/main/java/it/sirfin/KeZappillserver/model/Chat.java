@@ -27,9 +27,8 @@ public class Chat implements Serializable {
     public Chat() {
     }
 
-    public Chat(String nickname, String sessione) {
+    public Chat(String nickname) {
         this.nickname = nickname;
-        this.sessione = sessione;
     }
 
     public Long getId() {

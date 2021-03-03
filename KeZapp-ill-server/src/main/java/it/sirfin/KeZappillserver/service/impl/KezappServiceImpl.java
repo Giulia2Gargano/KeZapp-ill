@@ -26,7 +26,7 @@ public class KeZappServiceImpl implements KeZappService {
 
     @Override
     public RegistrazioneDto registrazione(RichiediRegistrazioneDto reqregDto) {
-        Chat ch = new Chat(reqregDto.getNickname(), "");
+        Chat ch = new Chat(reqregDto.getNickname());
         keZappRepositoryChat.save(ch);
         ch.setSessione(Long.toString(ch.getId()));
         keZappRepositoryChat.save(ch);
