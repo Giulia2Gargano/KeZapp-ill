@@ -1,45 +1,46 @@
-<div>
+<div *ngIf="showRegistra">
   <input type="text" [(ngModel)]="contatto.nickname">
   <button (click)="registrazione()">Registrazione</button>
 </div>
 <br>
-<div>
+<div *ngIf="showForm">
   <input type="text" [(ngModel)]="messaggioDaInviare">
   <button (click)="inviaATutti()">Invia a tutti</button>
-</div>
 
-<br>
-Contatti
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Nickname</th>
-    <th>Sessione</th>
-    <th>Invia</th>
-  </tr>
-  <tr *ngFor="let c of contatti">
-    <td>{{c.id}}</td>
-    <td>{{c.nickname}}</td>
-    <td>{{c.sessione}}</td>
-    <td><button (click)="inviaAUno(c)">Invia A Uno</button></td>
-  </tr>
-</table>
-<br>
-<br>
-Messaggi Ricevuti
-<button (click)="aggiorna()">Aggiorna</button>
-<br>
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Testo</th>
-    <th>Destinatario</th>
-    <th>Mittente</th>
-  </tr>
-  <tr *ngFor="let a of messaggi">
-    <td>{{a.id}}</td>
-    <td>{{a.testo}}</td>
-    <td>{{a.aliasDestinatario}}</td>
-    <td>{{a.aliasMittente}}</td>
-  </tr>
-</table>
+
+  <br>
+  Contatti
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Nickname</th>
+      <th>Sessione</th>
+      <th>Invia</th>
+    </tr>
+    <tr *ngFor="let c of contatti">
+      <td>{{c.id}}</td>
+      <td>{{c.nickname}}</td>
+      <td>{{c.sessione}}</td>
+      <td><button (click)="inviaAUno(c)">Invia A Uno</button></td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  Messaggi Ricevuti
+  <button (click)="aggiorna()">Aggiorna</button>
+  <br>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Testo</th>
+      <th>Destinatario</th>
+      <th>Mittente</th>
+    </tr>
+    <tr *ngFor="let a of messaggi">
+      <td>{{a.id}}</td>
+      <td>{{a.testo}}</td>
+      <td>{{a.aliasDestinatario}}</td>
+      <td>{{a.aliasMittente}}</td>
+    </tr>
+  </table>
+</div>

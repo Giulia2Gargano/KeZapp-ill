@@ -19,14 +19,16 @@ export class AppComponent {
   messaggio = new Messaggio();
   messaggi: Messaggio[] = [];
 
-
+  showRegistra = true;
+  showForm = false;
   sessione = "";
 
   messaggioDaInviare = "";
   constructor(private http: HttpClient) { }
 
   registrazione() {
-
+    this.showForm = true;
+    this.showRegistra = false;
     let req = new RichiediRegistrazioneDto();
     req.nickname = this.contatto.nickname;
     let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/registrazione", req);
