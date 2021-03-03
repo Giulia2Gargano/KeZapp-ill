@@ -29,6 +29,7 @@ public class KeZappServiceImpl implements KeZappService {
         Chat ch = new Chat(reqregDto.getNickname(), "");
         keZappRepositoryChat.save(ch);
         ch.setSessione(Long.toString(ch.getId()));
+        keZappRepositoryChat.save(ch);
         return new RegistrazioneDto();
         //creare nuovA CHat con i dati ricevuti 
         //salvare sul db recuperando laversione con l'id che il db ha aggiunto
