@@ -22,10 +22,15 @@ public class KeZappServiceImpl implements KeZappService {
     KeZappRepositoryChat keZappRepositoryChat;
     @Autowired
     KeZappRepositoryMessaggio KeZappRepositoryMessaggio;
-
+    
     @Override
     public RegistrazioneDto registrazione(RichiediRegistrazioneDto reqregDto) {
-        
+     //creare nuovA CHat con i dati ricevuti 
+     //salvare sul db recuperando laversione con l'id che il db ha aggiunto
+     //convertire l'id in stringa metterlo nella sessione della chat e aggiornarla sul db
+     //ritornare un registrazione dto
+      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     
     }
 
     @Override
