@@ -25,6 +25,7 @@ public class KeZappController {
     @RequestMapping("/registrazione")
     public RegistrazioneDto registrazione(RichiediRegistrazioneDto reqDto) {
         return keZappService.registrazione(reqDto);
+        
     }
 
     @RequestMapping("/invia-tutti")
