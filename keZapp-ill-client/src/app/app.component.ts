@@ -49,11 +49,16 @@ export class AppComponent {
     });
   }
 
-  inviaAUno(c: Messaggio) {
+  inviaAUno(c: Chat) {
     let req = new InviaMessaggioDto();
-    req.destinatario = c.aliasDestinatario;
+    req.sessione = this.sessione;
+    req.messaggio = this.messaggioDaInviare;
+    req.destinatario = c.nickname;
     let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/invia-uno", req);
-    oss.subscribe();
+    oss.subscribe(r => {
+      this.messaggi = r.messaggi;
+      this.contatti = r.contatti;
+    });
   }
 
   aggiorna() {

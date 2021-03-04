@@ -60,8 +60,14 @@ public class KeZappServiceImpl implements KeZappService {
 
     @Override
     public RegistrazioneDto inviaAUno(InviaMessaggioDto ia1) {
-        //Messaggio m = new Messaggio(ia1.getMessaggio(), ia1.getDestinatario(), );
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println(ia1);
+        Chat c = keZappRepositoryChat.findBySessione(ia1.getSessione());
+        if (c.getNickname() == null || c.getNickname().isEmpty()) {
+            return new RegistrazioneDto();
+        }
+        Messaggio m = new Messaggio(ia1.getMessaggio(), ia1.getDestinatario(), c.getNickname());
+        keZappRepositoryMessaggio.save(m);
+        return new RegistrazioneDto(ritornaContatti(), ritornaMessaggiPrivati(c.getNickname()), ia1.getSessione());
     }
 
     @Override
@@ -86,4 +92,9 @@ public class KeZappServiceImpl implements KeZappService {
         return privati;
     }
 
+    @Override
+    public List<Messaggio> ritornaMessaggiPrivati(String p) {
+        List<Messaggio> privati = keZappRepositoryMessaggio.findByAliasDestinatario(p);
+        return privati;
+    }
 }

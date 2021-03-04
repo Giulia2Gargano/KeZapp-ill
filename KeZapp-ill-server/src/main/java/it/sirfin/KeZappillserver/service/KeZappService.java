@@ -31,4 +31,6 @@ public interface KeZappService {
 
     List<Messaggio> ritornaMessaggi(String nn);
 
+    List<Messaggio> ritornaMessaggiPrivati(String p);
+
 }
