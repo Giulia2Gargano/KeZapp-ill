@@ -9387,3 +9387,112 @@ java.lang.NullPointerException: null
 2021-03-04 16:41:03.238 DEBUG 6156 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_
 2021-03-04 16:41:16.252 DEBUG 6156 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select messaggio0_.id as id1_1_, messaggio0_.alias_destinatario as alias_de2_1_, messaggio0_.alias_mittente as alias_mi3_1_, messaggio0_.testo as testo4_1_ from messaggio messaggio0_
 2021-03-04 16:41:16.257 DEBUG 6156 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_
+2021-03-04 16:48:35.061  WARN 12080 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-04 16:48:55.257 DEBUG 12080 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_ where chat0_.nickname=?
+2021-03-04 16:48:55.287 TRACE 12080 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Franceschino]
+2021-03-04 16:48:55.332 DEBUG 12080 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-04 16:48:55.334 DEBUG 12080 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-04 16:48:55.375 DEBUG 12080 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : insert into chat (nickname, sessione, id) values (?, ?, ?)
+2021-03-04 16:48:55.376 TRACE 12080 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Franceschino]
+2021-03-04 16:48:55.377 TRACE 12080 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [null]
+2021-03-04 16:48:55.382 TRACE 12080 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [BIGINT] - [34]
+2021-03-04 16:48:55.408 DEBUG 12080 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update chat set nickname=?, sessione=? where id=?
+2021-03-04 16:48:55.409 TRACE 12080 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Franceschino]
+2021-03-04 16:48:55.409 TRACE 12080 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [34]
+2021-03-04 16:48:55.410 TRACE 12080 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [BIGINT] - [34]
+2021-03-04 16:48:55.426 DEBUG 12080 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_
+2021-03-04 16:48:55.442 DEBUG 12080 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select messaggio0_.id as id1_1_, messaggio0_.alias_destinatario as alias_de2_1_, messaggio0_.alias_mittente as alias_mi3_1_, messaggio0_.testo as testo4_1_ from messaggio messaggio0_ where messaggio0_.alias_destinatario=?
+2021-03-04 16:48:55.443 TRACE 12080 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Franceschino]
+2021-03-04 16:48:55.452 DEBUG 12080 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select messaggio0_.id as id1_1_, messaggio0_.alias_destinatario as alias_de2_1_, messaggio0_.alias_mittente as alias_mi3_1_, messaggio0_.testo as testo4_1_ from messaggio messaggio0_ where messaggio0_.alias_destinatario is null
+2021-03-04 16:49:13.051 DEBUG 12080 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_ where chat0_.nickname=?
+2021-03-04 16:49:13.053 TRACE 12080 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Gigigno]
+2021-03-04 16:49:13.056 DEBUG 12080 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-04 16:49:13.058 DEBUG 12080 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-04 16:49:13.064 DEBUG 12080 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : insert into chat (nickname, sessione, id) values (?, ?, ?)
+2021-03-04 16:49:13.065 TRACE 12080 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Gigigno]
+2021-03-04 16:49:13.065 TRACE 12080 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [null]
+2021-03-04 16:49:13.066 TRACE 12080 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [BIGINT] - [35]
+2021-03-04 16:49:13.071 DEBUG 12080 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : update chat set nickname=?, sessione=? where id=?
+2021-03-04 16:49:13.072 TRACE 12080 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Gigigno]
+2021-03-04 16:49:13.072 TRACE 12080 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [35]
+2021-03-04 16:49:13.073 TRACE 12080 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [BIGINT] - [35]
+2021-03-04 16:49:13.079 DEBUG 12080 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_
+2021-03-04 16:49:13.086 DEBUG 12080 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select messaggio0_.id as id1_1_, messaggio0_.alias_destinatario as alias_de2_1_, messaggio0_.alias_mittente as alias_mi3_1_, messaggio0_.testo as testo4_1_ from messaggio messaggio0_ where messaggio0_.alias_destinatario=?
+2021-03-04 16:49:13.087 TRACE 12080 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Gigigno]
+2021-03-04 16:49:13.089 DEBUG 12080 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select messaggio0_.id as id1_1_, messaggio0_.alias_destinatario as alias_de2_1_, messaggio0_.alias_mittente as alias_mi3_1_, messaggio0_.testo as testo4_1_ from messaggio messaggio0_ where messaggio0_.alias_destinatario is null
+2021-03-04 16:49:21.105 DEBUG 12080 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select messaggio0_.id as id1_1_, messaggio0_.alias_destinatario as alias_de2_1_, messaggio0_.alias_mittente as alias_mi3_1_, messaggio0_.testo as testo4_1_ from messaggio messaggio0_
+2021-03-04 16:49:21.114 DEBUG 12080 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_
+2021-03-04 16:49:22.360 DEBUG 12080 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_ where chat0_.sessione=?
+2021-03-04 16:49:22.363 TRACE 12080 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [34]
+2021-03-04 16:49:22.381 DEBUG 12080 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-04 16:49:22.385 DEBUG 12080 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-04 16:49:22.391 DEBUG 12080 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : insert into messaggio (alias_destinatario, alias_mittente, testo, id) values (?, ?, ?, ?)
+2021-03-04 16:49:22.392 TRACE 12080 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Gigigno]
+2021-03-04 16:49:22.393 TRACE 12080 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Franceschino]
+2021-03-04 16:49:22.394 TRACE 12080 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [ciao gigigno]
+2021-03-04 16:49:22.394 TRACE 12080 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [BIGINT] - [36]
+2021-03-04 16:49:22.400 DEBUG 12080 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_
+2021-03-04 16:49:22.408 DEBUG 12080 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select messaggio0_.id as id1_1_, messaggio0_.alias_destinatario as alias_de2_1_, messaggio0_.alias_mittente as alias_mi3_1_, messaggio0_.testo as testo4_1_ from messaggio messaggio0_ where messaggio0_.alias_destinatario=?
+2021-03-04 16:49:22.409 TRACE 12080 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Franceschino]
+2021-03-04 16:50:13.542 DEBUG 12080 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select messaggio0_.id as id1_1_, messaggio0_.alias_destinatario as alias_de2_1_, messaggio0_.alias_mittente as alias_mi3_1_, messaggio0_.testo as testo4_1_ from messaggio messaggio0_
+2021-03-04 16:50:13.548 DEBUG 12080 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_
+2021-03-04 16:52:25.847  WARN 1736 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-04 16:52:36.447 DEBUG 1736 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_ where chat0_.nickname=?
+2021-03-04 16:52:36.464 TRACE 1736 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [tyjktyjkty]
+2021-03-04 16:52:36.503 DEBUG 1736 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-04 16:52:36.506 DEBUG 1736 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-04 16:52:36.537 DEBUG 1736 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : insert into chat (nickname, sessione, id) values (?, ?, ?)
+2021-03-04 16:52:36.538 TRACE 1736 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [tyjktyjkty]
+2021-03-04 16:52:36.539 TRACE 1736 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [null]
+2021-03-04 16:52:36.540 TRACE 1736 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [BIGINT] - [37]
+2021-03-04 16:52:36.554 DEBUG 1736 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update chat set nickname=?, sessione=? where id=?
+2021-03-04 16:52:36.554 TRACE 1736 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [tyjktyjkty]
+2021-03-04 16:52:36.554 TRACE 1736 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [37]
+2021-03-04 16:52:36.555 TRACE 1736 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [BIGINT] - [37]
+2021-03-04 16:52:36.573 DEBUG 1736 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_
+2021-03-04 16:52:36.590 DEBUG 1736 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select messaggio0_.id as id1_1_, messaggio0_.alias_destinatario as alias_de2_1_, messaggio0_.alias_mittente as alias_mi3_1_, messaggio0_.testo as testo4_1_ from messaggio messaggio0_ where messaggio0_.alias_destinatario=?
+2021-03-04 16:52:36.591 TRACE 1736 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [tyjktyjkty]
+2021-03-04 16:52:36.601 DEBUG 1736 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select messaggio0_.id as id1_1_, messaggio0_.alias_destinatario as alias_de2_1_, messaggio0_.alias_mittente as alias_mi3_1_, messaggio0_.testo as testo4_1_ from messaggio messaggio0_ where messaggio0_.alias_destinatario is null
+2021-03-04 16:52:47.514 DEBUG 1736 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_ where chat0_.sessione=?
+2021-03-04 16:52:47.516 TRACE 1736 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [37]
+2021-03-04 16:52:47.535 DEBUG 1736 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-04 16:52:47.539 DEBUG 1736 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-04 16:52:47.549 DEBUG 1736 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : insert into messaggio (alias_destinatario, alias_mittente, testo, id) values (?, ?, ?, ?)
+2021-03-04 16:52:47.550 TRACE 1736 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Carla]
+2021-03-04 16:52:47.551 TRACE 1736 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [tyjktyjkty]
+2021-03-04 16:52:47.551 TRACE 1736 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [ciao ergrthrt]
+2021-03-04 16:52:47.552 TRACE 1736 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [BIGINT] - [38]
+2021-03-04 16:52:47.565 DEBUG 1736 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_
+2021-03-04 16:52:47.589 DEBUG 1736 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select messaggio0_.id as id1_1_, messaggio0_.alias_destinatario as alias_de2_1_, messaggio0_.alias_mittente as alias_mi3_1_, messaggio0_.testo as testo4_1_ from messaggio messaggio0_ where messaggio0_.alias_destinatario=?
+2021-03-04 16:52:47.590 TRACE 1736 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [tyjktyjkty]
+2021-03-04 16:54:28.030  WARN 13260 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-04 16:54:37.183 DEBUG 13260 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_ where chat0_.nickname=?
+2021-03-04 16:54:37.205 TRACE 13260 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ooooo]
+2021-03-04 16:54:37.252 DEBUG 13260 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-04 16:54:37.254 DEBUG 13260 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-04 16:54:37.294 DEBUG 13260 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : insert into chat (nickname, sessione, id) values (?, ?, ?)
+2021-03-04 16:54:37.295 TRACE 13260 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ooooo]
+2021-03-04 16:54:37.296 TRACE 13260 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [null]
+2021-03-04 16:54:37.297 TRACE 13260 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [BIGINT] - [39]
+2021-03-04 16:54:37.313 DEBUG 13260 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update chat set nickname=?, sessione=? where id=?
+2021-03-04 16:54:37.314 TRACE 13260 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ooooo]
+2021-03-04 16:54:37.315 TRACE 13260 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [39]
+2021-03-04 16:54:37.315 TRACE 13260 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [BIGINT] - [39]
+2021-03-04 16:54:37.333 DEBUG 13260 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_
+2021-03-04 16:54:37.352 DEBUG 13260 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select messaggio0_.id as id1_1_, messaggio0_.alias_destinatario as alias_de2_1_, messaggio0_.alias_mittente as alias_mi3_1_, messaggio0_.testo as testo4_1_ from messaggio messaggio0_ where messaggio0_.alias_destinatario=?
+2021-03-04 16:54:37.353 TRACE 13260 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ooooo]
+2021-03-04 16:54:37.364 DEBUG 13260 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select messaggio0_.id as id1_1_, messaggio0_.alias_destinatario as alias_de2_1_, messaggio0_.alias_mittente as alias_mi3_1_, messaggio0_.testo as testo4_1_ from messaggio messaggio0_ where messaggio0_.alias_destinatario is null
+2021-03-04 16:54:48.731 DEBUG 13260 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_ where chat0_.sessione=?
+2021-03-04 16:54:48.736 TRACE 13260 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [39]
+2021-03-04 16:54:48.748 DEBUG 13260 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-04 16:54:48.752 DEBUG 13260 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-04 16:54:48.761 DEBUG 13260 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : insert into messaggio (alias_destinatario, alias_mittente, testo, id) values (?, ?, ?, ?)
+2021-03-04 16:54:48.762 TRACE 13260 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Gigigno]
+2021-03-04 16:54:48.763 TRACE 13260 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [ooooo]
+2021-03-04 16:54:48.764 TRACE 13260 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [ciao ieeregh]
+2021-03-04 16:54:48.765 TRACE 13260 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [BIGINT] - [40]
+2021-03-04 16:54:48.771 DEBUG 13260 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_
+2021-03-04 16:54:48.781 DEBUG 13260 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select messaggio0_.id as id1_1_, messaggio0_.alias_destinatario as alias_de2_1_, messaggio0_.alias_mittente as alias_mi3_1_, messaggio0_.testo as testo4_1_ from messaggio messaggio0_ where messaggio0_.alias_destinatario=?
+2021-03-04 16:54:48.783 TRACE 13260 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ooooo]
+2021-03-04 16:55:13.694 DEBUG 13260 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select messaggio0_.id as id1_1_, messaggio0_.alias_destinatario as alias_de2_1_, messaggio0_.alias_mittente as alias_mi3_1_, messaggio0_.testo as testo4_1_ from messaggio messaggio0_
+2021-03-04 16:55:13.701 DEBUG 13260 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select chat0_.id as id1_0_, chat0_.nickname as nickname2_0_, chat0_.sessione as sessione3_0_ from chat chat0_

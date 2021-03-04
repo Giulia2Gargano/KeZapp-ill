@@ -60,12 +60,19 @@ public class KeZappServiceImpl implements KeZappService {
 
     @Override
     public RegistrazioneDto inviaAUno(InviaMessaggioDto ia1) {
+        System.out.println("--------------------------------------------");
         System.out.println(ia1);
+        System.out.println("--------------------------------------------");
         Chat c = keZappRepositoryChat.findBySessione(ia1.getSessione());
         if (c.getNickname() == null || c.getNickname().isEmpty()) {
             return new RegistrazioneDto();
         }
+        System.out.println("--------------------------------------------");
+        System.out.println(c);
+        System.out.println("--------------------------------------------");
         Messaggio m = new Messaggio(ia1.getMessaggio(), ia1.getDestinatario(), c.getNickname());
+        System.out.println(m);
+        System.out.println("--------------------------------------------");
         keZappRepositoryMessaggio.save(m);
         return new RegistrazioneDto(ritornaContatti(), ritornaMessaggiPrivati(c.getNickname()), ia1.getSessione());
     }
