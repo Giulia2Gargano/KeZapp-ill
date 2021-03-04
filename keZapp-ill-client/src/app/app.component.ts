@@ -18,7 +18,7 @@ export class AppComponent {
 
   messaggio = new Messaggio();
   messaggi: Messaggio[] = [];
-
+  messaggioDaInviare = "";
   showRegistra = true;
   showForm = false;
   sessione = "";
@@ -41,9 +41,10 @@ export class AppComponent {
   inviaATutti() {
     let req = new InviaMessaggioDto();
     req.sessione = this.sessione;
+    req.messaggio = this.messaggioDaInviare;
     let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/invia-tutti", req);
     oss.subscribe(r => {
-      this.messaggi = r.messaggi
+      this.messaggi = r.messaggi;
       this.contatti = r.contatti;
     });
   }

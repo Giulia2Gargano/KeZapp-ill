@@ -13,5 +13,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface KeZappRepositoryMessaggio extends JpaRepository<Messaggio, Long> {
 
-    List<Messaggio> findByAliasMittente(String s);
+    List<Messaggio> findByAliasDestinatario(String s);
+
+    List<Messaggio> findByAliasDestinatarioIsNull();
+
 }

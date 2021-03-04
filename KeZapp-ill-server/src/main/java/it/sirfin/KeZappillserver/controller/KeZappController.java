@@ -29,7 +29,9 @@ public class KeZappController {
     @ResponseBody
     public RegistrazioneDto registrazione(@RequestBody RichiediRegistrazioneDto reqDto) {
         System.out.println("Servizio Chiamato");
-        return keZappService.registrazione(reqDto);
+        RegistrazioneDto r = keZappService.registrazione(reqDto);
+        System.out.println(r);
+        return r;
     }
 
     @RequestMapping("/invia-tutti")

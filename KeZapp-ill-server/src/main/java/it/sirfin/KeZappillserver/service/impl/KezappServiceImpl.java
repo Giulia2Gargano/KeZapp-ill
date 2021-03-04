@@ -37,24 +37,25 @@ public class KeZappServiceImpl implements KeZappService {
             ch.setSessione(Long.toString(ch.getId()));
             keZappRepositoryChat.save(ch);
             //ritornare un registrazione dto
-            return new RegistrazioneDto(ritornaContatti(ch), ritornaMessaggi(ch), ch.getSessione());
+            return new RegistrazioneDto(ritornaContatti(), ritornaMessaggi(ch.getNickname()), ch.getSessione());
         }
         return new RegistrazioneDto();
     }
 
     @Override
     public RegistrazioneDto inviaATutti(InviaMessaggioDto iat) {
+        System.out.println(iat);
         //cercare tra le chat quella che ha la sessione del dto e recuperarne il nickname
         Chat c = keZappRepositoryChat.findBySessione(iat.getSessione());
         //se non esiste ritornare un dto vuoto
-        if (c.getNickname().isEmpty()) {
+        if (c.getNickname() == null || c.getNickname().isEmpty()) {
             return new RegistrazioneDto();
         }
         //se esiste usare il nickname della chat per compilarlo e salvarlo
         Messaggio m = new Messaggio(iat.getMessaggio(), null, c.getNickname());
         keZappRepositoryMessaggio.save(m);
         //keZappRepositoryMessaggio.findAll();
-        return new RegistrazioneDto(ritornaContatti(c), ritornaMessaggi(c), iat.getSessione());
+        return new RegistrazioneDto(ritornaContatti(), ritornaMessaggi(c.getNickname()), iat.getSessione());
     }
 
     @Override
@@ -69,13 +70,18 @@ public class KeZappServiceImpl implements KeZappService {
     }
 
     @Override
-    public List<Chat> ritornaContatti(Chat c) {
-        return keZappRepositoryChat.findByNickname(c.getSessione());
+    public List<Chat> ritornaContatti() {
+        return keZappRepositoryChat.findAll();
     }
 
     @Override
-    public List<Messaggio> ritornaMessaggi(Chat c) {
-        return keZappRepositoryMessaggio.findByAliasMittente(c.getSessione());
+    public List<Messaggio> ritornaMessaggi(String nn) {
+        List<Messaggio> privati = keZappRepositoryMessaggio.findByAliasDestinatario(nn);
+        List<Messaggio> pubblici = keZappRepositoryMessaggio.findByAliasDestinatarioIsNull();
+        System.out.println(privati);
+        System.out.println(pubblici);
+        privati.addAll(pubblici);
+        return privati;
     }
 
 }

@@ -27,8 +27,8 @@ public interface KeZappService {
 
     RegistrazioneDto aggiorna(RichiediMessaggioDto reqM);
 
-    List<Chat> ritornaContatti(Chat c);
+    List<Chat> ritornaContatti();
 
-    List<Messaggio> ritornaMessaggi(Chat c);
+    List<Messaggio> ritornaMessaggi(String nn);
 
 }
