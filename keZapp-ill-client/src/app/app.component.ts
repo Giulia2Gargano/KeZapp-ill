@@ -53,12 +53,15 @@ export class AppComponent {
     let req = new InviaMessaggioDto();
     req.sessione = this.sessione;
     req.messaggio = this.messaggioDaInviare;
+    console.log(c.nickname);
     req.destinatario = c.nickname;
     let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/invia-uno", req);
+    console.log("sto per fare la subscribe");
     oss.subscribe(r => {
       this.messaggi = r.messaggi;
       this.contatti = r.contatti;
     });
+    console.log("ho fatto la subscribe");
   }
 
   aggiorna() {
