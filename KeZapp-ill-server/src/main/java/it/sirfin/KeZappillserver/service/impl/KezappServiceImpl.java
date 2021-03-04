@@ -66,9 +66,7 @@ public class KeZappServiceImpl implements KeZappService {
 
     @Override
     public RegistrazioneDto aggiorna(RichiediMessaggioDto reqM) {
-        List<Messaggio> m = keZappRepositoryMessaggio.findAll();
-        List<Chat> c = keZappRepositoryChat.findAll();
-        return new RegistrazioneDto(c, m, reqM.getSessione());
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
