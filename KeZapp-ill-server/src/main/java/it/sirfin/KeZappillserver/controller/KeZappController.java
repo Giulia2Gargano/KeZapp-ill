@@ -36,14 +36,14 @@ public class KeZappController {
     @ResponseBody
     public RegistrazioneDto inviaATutti(@RequestBody InviaMessaggioDto reqDto) {
         System.out.println("Servizio Chiamato");
-        return keZappService.invaATutti(reqDto);
+        return keZappService.inviaATutti(reqDto);
     }
 
     @RequestMapping("/invia-uno")
     @ResponseBody
     public RegistrazioneDto inviaAUno(@RequestBody InviaMessaggioDto reqDto) {
         System.out.println("Servizio Chiamato");
-        return keZappService.invaAUno(reqDto);
+        return keZappService.inviaAUno(reqDto);
     }
 
     @RequestMapping("/aggiorna")

@@ -21,9 +21,9 @@ public interface KeZappService {
 
     RegistrazioneDto registrazione(RichiediRegistrazioneDto reqregDto);
 
-    RegistrazioneDto invaATutti(InviaMessaggioDto iat);
+    RegistrazioneDto inviaATutti(InviaMessaggioDto iat);
 
-    RegistrazioneDto invaAUno(InviaMessaggioDto ia1);
+    RegistrazioneDto inviaAUno(InviaMessaggioDto ia1);
 
     RegistrazioneDto aggiorna(RichiediMessaggioDto reqM);
 

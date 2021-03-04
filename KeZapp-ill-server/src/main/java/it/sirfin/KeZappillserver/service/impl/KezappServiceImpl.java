@@ -24,7 +24,7 @@ public class KeZappServiceImpl implements KeZappService {
     @Autowired
     KeZappRepositoryChat keZappRepositoryChat;
     @Autowired
-    KeZappRepositoryMessaggio KeZappRepositoryMessaggio;
+    KeZappRepositoryMessaggio keZappRepositoryMessaggio;
 
     @Override
     public RegistrazioneDto registrazione(RichiediRegistrazioneDto reqregDto) {
@@ -43,22 +43,29 @@ public class KeZappServiceImpl implements KeZappService {
     }
 
     @Override
-    public RegistrazioneDto invaATutti(InviaMessaggioDto iat) {
-        Messaggio m = new Messaggio(iat.getMessaggio(), iat.getDestinatario(), iat.getSessione());
-        KeZappRepositoryMessaggio.save(m);
-        KeZappRepositoryMessaggio.findAll();
+    public RegistrazioneDto inviaATutti(InviaMessaggioDto iat) {
+        //cercare tra le chat quella che ha la sessione del dto e recuperarne il nickname
+        Chat c = keZappRepositoryChat.findBySessione(iat.getSessione());
+        //se non esiste ritornare un dto vuoto
+        if (c.getNickname().isEmpty()) {
+            return new RegistrazioneDto();
+        }
+        //se esiste usare il nickname della chat per compilarlo e salvarlo
+        Messaggio m = new Messaggio(iat.getMessaggio(), null, c.getNickname());
+        keZappRepositoryMessaggio.save(m);
+        keZappRepositoryMessaggio.findAll();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 
     }
 
     @Override
-    public RegistrazioneDto invaAUno(InviaMessaggioDto ia1) {
+    public RegistrazioneDto inviaAUno(InviaMessaggioDto ia1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public RegistrazioneDto aggiorna(RichiediMessaggioDto reqM) {
-        return new RegistrazioneDto(keZappRepositoryChat.findAll(), KeZappRepositoryMessaggio.findAll(), reqM.getSessione());
+        return new RegistrazioneDto(keZappRepositoryChat.findAll(), keZappRepositoryMessaggio.findAll(), reqM.getSessione());
     }
 
     @Override
@@ -68,7 +75,7 @@ public class KeZappServiceImpl implements KeZappService {
 
     @Override
     public List<Messaggio> ritornaMessaggi(Chat c) {
-        return KeZappRepositoryMessaggio.findByAliasMittente(c.getSessione());
+        return keZappRepositoryMessaggio.findByAliasMittente(c.getSessione());
     }
 
 }
