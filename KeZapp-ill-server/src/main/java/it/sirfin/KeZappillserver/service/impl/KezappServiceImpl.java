@@ -53,19 +53,19 @@ public class KeZappServiceImpl implements KeZappService {
         //se esiste usare il nickname della chat per compilarlo e salvarlo
         Messaggio m = new Messaggio(iat.getMessaggio(), null, c.getNickname());
         keZappRepositoryMessaggio.save(m);
-        keZappRepositoryMessaggio.findAll();
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-
+        //keZappRepositoryMessaggio.findAll();
+        return new RegistrazioneDto(ritornaContatti(c), ritornaMessaggi(c), iat.getSessione());
     }
 
     @Override
     public RegistrazioneDto inviaAUno(InviaMessaggioDto ia1) {
+        //Messaggio m = new Messaggio(ia1.getMessaggio(), ia1.getDestinatario(), );
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public RegistrazioneDto aggiorna(RichiediMessaggioDto reqM) {
-        return new RegistrazioneDto(keZappRepositoryChat.findAll(), keZappRepositoryMessaggio.findAll(), reqM.getSessione());
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
