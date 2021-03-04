@@ -31,15 +31,11 @@
   <br>
   <table>
     <tr>
-      <th>Id</th>
       <th>Testo</th>
-      <th>Destinatario</th>
       <th>Mittente</th>
     </tr>
     <tr *ngFor="let a of messaggi">
-      <td>{{a.id}}</td>
       <td>{{a.testo}}</td>
-      <td>{{a.aliasDestinatario}}</td>
       <td>{{a.aliasMittente}}</td>
     </tr>
   </table>
