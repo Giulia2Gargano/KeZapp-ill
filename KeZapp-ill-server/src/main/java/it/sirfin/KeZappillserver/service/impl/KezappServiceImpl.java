@@ -28,15 +28,18 @@ public class KeZappServiceImpl implements KeZappService {
 
     @Override
     public RegistrazioneDto registrazione(RichiediRegistrazioneDto reqregDto) {
-        //creare nuovA CHat con i dati ricevuti 
-        Chat ch = new Chat(reqregDto.getNickname());
-        //salvare sul db recuperando laversione con l'id che il db ha aggiunto
-        keZappRepositoryChat.save(ch);
-        //convertire l'id in stringa metterlo nella sessione della chat e aggiornarla sul db
-        ch.setSessione(Long.toString(ch.getId()));
-        keZappRepositoryChat.save(ch);
-        //ritornare un registrazione dto
-        return new RegistrazioneDto(ritornaContatti(ch), ritornaMessaggi(ch), ch.getSessione());
+        if (keZappRepositoryChat.findByNickname(reqregDto.getNickname()).isEmpty()) {
+            //creare nuovA CHat con i dati ricevuti 
+            Chat ch = new Chat(reqregDto.getNickname());
+            //salvare sul db recuperando laversione con l'id che il db ha aggiunto
+            keZappRepositoryChat.save(ch);
+            //convertire l'id in stringa metterlo nella sessione della chat e aggiornarla sul db
+            ch.setSessione(Long.toString(ch.getId()));
+            keZappRepositoryChat.save(ch);
+            //ritornare un registrazione dto
+            return new RegistrazioneDto(ritornaContatti(ch), ritornaMessaggi(ch), ch.getSessione());
+        }
+        return new RegistrazioneDto();
     }
 
     @Override
@@ -60,7 +63,7 @@ public class KeZappServiceImpl implements KeZappService {
 
     @Override
     public List<Chat> ritornaContatti(Chat c) {
-        return keZappRepositoryChat.findBySessioneIsNot(c.getSessione());
+        return keZappRepositoryChat.findByNickname(c.getSessione());
     }
 
     @Override

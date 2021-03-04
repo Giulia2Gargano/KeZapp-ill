@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface KeZappRepositoryChat extends JpaRepository<Chat, Long> {
 
-    List<Chat> findBySessioneIsNot(String s);
+    List<Chat> findByNickname(String s);
 }
