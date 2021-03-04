@@ -79,8 +79,12 @@ public class KeZappServiceImpl implements KeZappService {
 
     @Override
     public RegistrazioneDto aggiorna(RichiediMessaggioDto reqM) {
+        System.out.println("--------------------------------------------");
         List<Messaggio> m = keZappRepositoryMessaggio.findAll();
+        System.out.println(m);
+        System.out.println("--------------------------------------------");
         List<Chat> c = keZappRepositoryChat.findAll();
+        System.out.println(c);
         return new RegistrazioneDto(c, m, reqM.getSessione());
     }
 
